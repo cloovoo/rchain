@@ -9,9 +9,9 @@ done
 sed -i 's/print/ostream-print (ostream-new "results.txt")/g' tests/*.rbl
 # Move all generated tests under the rosette/tests folder to run
 mv tests/*.rbl ../rosette/rbl/rosette/tests/
-exit 1;
+#exit 1;
 for i in failure_tests/*.rho; do
-  if ./rho2rbl "$i" ; then
+  if ./rho2rbl "$i" || true; then
     rm "${i%.*}.rbl";
     #exit 1
     #exit(1);
