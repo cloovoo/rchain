@@ -11,7 +11,8 @@ sed -i 's/print/ostream-print (ostream-new "results.txt")/g' tests/*.rbl
 mv tests/*.rbl ../rosette/rbl/rosette/tests/
 for i in failure_tests/*.rho; do
   if ./rho2rbl "$i" ; then
-    rm "${i%.*}.rbl"
-    exit 1
+    rm "${i%.*}.rbl";
+    #exit 1
+    exit(1);
   fi
 done
